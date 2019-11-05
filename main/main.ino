@@ -1,11 +1,10 @@
-#include "../libraries/Ultrasonic/Ultrasonic.h"
-#include "../libraries/DMPH/DMPH.h"
+#include "./libraries/Ultrasonic/Ultrasonic.h"
+#include "./libraries/DMPH/DMPH.h"
 
 #define echoPin 10 //Pino 10 recebe o pulso do echo
 #define trigPin 8  //Pino 9 envia o pulso para gerar o echo
 
-#define inPin = 2; //pino de entrada no sensor
-#define valor = 0; //Inteiro que armazena o valor lido
+#define inPin 2 //pino de entrada no sensor
 
 int branco;
 int preto;
@@ -17,7 +16,7 @@ DMPH motorD(5, 4, 3);
 //iniciando a função e passando os pinos
 Ultrasonic ultrasonic(trigPin, echoPin);
 
-void void setup()
+void setup()
 {
   Serial.begin(9600);
   pinMode(echoPin, INPUT);  // define o pino 10 como entrada (recebe)
@@ -26,4 +25,5 @@ void void setup()
 }
 void loop()
 {
+  Serial.println(dis()); 
 }
