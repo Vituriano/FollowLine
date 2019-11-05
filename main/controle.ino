@@ -1,3 +1,7 @@
+/*
+ Essas funcoes recebem como entrada a constante de correcao de cara motor
+*/
+
 void frente(int motorDireita, int motorEsquerda)
 {
   motorD.ligar(motorDireita);
