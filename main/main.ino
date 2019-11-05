@@ -1,7 +1,6 @@
 #include <DMPH.h>
 #include <Ultrasonic.h>
 
-
 #define echoPin 10 //Pino 10 recebe o pulso do echo
 #define trigPin 8  //Pino 9 envia o pulso para gerar o echo
 
@@ -12,8 +11,9 @@
 
 #define DIFF_K 820
 
-int branco;
-int preto;
+int branco = 1;
+int preto = 0;
+int valor;
 
 //Definicoes pinos Arduino ligados a entrada da Ponte H
 DMPH motorE(6, 7, 9);
@@ -48,9 +48,16 @@ void setup()
   digitalWrite(pot_vcc,HIGH);
   digitalWrite(pot_gnd,LOW);
 }
+
 void loop() {
     int d, e;
     diferencial(DIFF_K, &d, &e);
     //Serial.println(analogRead(A8));
     frente(d,e);    
+    valor = digitalRead(inPin); //realizando a leitura no sensor optico
+    if(dis() > 7) {
+        seguirLinha();
+    } else {
+        desviar();
+    }
 }
