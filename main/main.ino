@@ -1,5 +1,6 @@
-#include "./libraries/Ultrasonic/Ultrasonic.h"
-#include "./libraries/DMPH/DMPH.h"
+#include <DMPH.h>
+#include <Ultrasonic.h>
+
 
 #define echoPin 10 //Pino 10 recebe o pulso do echo
 #define trigPin 8  //Pino 9 envia o pulso para gerar o echo
