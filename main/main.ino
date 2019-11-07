@@ -8,6 +8,7 @@
 
 #define pot_vcc 51
 #define pot_gnd 53
+#define PINO_DEBUG 49
 
 #define DIFF_K 820
 
@@ -25,7 +26,8 @@ Ultrasonic ultrasonic(trigPin, echoPin);
 const int E_K=255;
 const int D_K=255;
 
-void diferencial(int analog, int* direita, int* esquerda){
+// Recebe um valor e retorna o diferencial da esquerda e direita
+void diferencial(int analog, int* esquerda, int* direita){
   *direita=255,*esquerda=255;
   if(analog>500){
     *direita-=(analog-500)/2;
@@ -44,6 +46,7 @@ void setup()
   pinMode(inPin, INPUT);    //colocando a porta 2 como entrada
   pinMode(pot_vcc,OUTPUT);
   pinMode(pot_gnd,OUTPUT);
+  pinMode(PINO_DEBUG,OUTPUT);
 
   digitalWrite(pot_vcc,HIGH);
   digitalWrite(pot_gnd,LOW);
@@ -55,9 +58,12 @@ void loop() {
     //Serial.println(analogRead(A8));
     frente(d,e);    
     valor = digitalRead(inPin); //realizando a leitura no sensor optico
-    if(dis() > 7) {
-        seguirLinha();
+    Serial.println(valor);
+    if(dis() > 30) {
+        //seguirLinha();
+        debug_seguirLinha(e,d);
     } else {
-        desviar();
+        //debug_desviar(e,d);
+        desviar(d,e);
     }
 }

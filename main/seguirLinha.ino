@@ -1,3 +1,8 @@
+
+void debug_seguirLinha(int e, int d){
+   frente(e,d); 
+}
+
 void seguirLinha()
 {
    if (valor == branco)
