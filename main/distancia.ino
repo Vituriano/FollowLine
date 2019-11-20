@@ -16,6 +16,6 @@ int dis()
    int distancia = (ultrasonic.Ranging(CM));
    Serial.print("Distancia em CM: ");
    Serial.println(distancia);
-   delay(1000); //espera 1 segundo para fazer a leitura
+   delay(100); //espera 1 segundo para fazer a leitura
    return distancia;
 }
