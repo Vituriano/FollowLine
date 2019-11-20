@@ -26,10 +26,10 @@ void setup()
 void loop()
 {
   int valor = digitalRead(inPin); //realizando a leitura no sensor optico
-  if (dis() > 7)
-  {
-    seguirLinha();
-  }else{
-    desviar();
-  }
+                                  // if (dis() > 7)
+                                  // {
+  seguirLinha(valor);
+  // }else{
+  //   desviar();
+  // }
 }
