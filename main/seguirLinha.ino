@@ -1,21 +1,11 @@
-
-void debug_seguirLinha(int e, int d){
-   frente(e,d); 
-}
-
-void seguirLinha()
+void seguirLinha(int valor)
 {
    if (valor == branco)
    {
-      frente(100, 50);
-      delay(50);
+      frente(50, 90 - 40);
    }
    else
    {
-      while (valor == preto)
-      {
-         frente(50, 100);
-         delay(50);
-      }
+      frente(50 - 20, 90);
    }
 }
