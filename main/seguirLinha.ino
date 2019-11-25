@@ -1,11 +1,22 @@
 void seguirLinha(int valor)
 {
-   if (valor == branco)
+   if (valor == !branco)
    {
-      frente(50, 90 - 40);
+      frente(80 + 100, 50 - 35);
+      digitalWrite(ledE, 255);
    }
    else
    {
-      frente(50 - 20, 90);
+      frente(80 - 30, 50 + 40);
+      digitalWrite(ledD, 255);
    }
 }
+
+// if (valor == !branco)
+// {
+//    frente(80 + 100, 50 - 35);
+// }
+// else
+// {
+//    frente(80 - 30, 50 + 40);
+// }

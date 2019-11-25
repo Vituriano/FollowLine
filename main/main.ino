@@ -6,6 +6,9 @@
 
 #define inPin 2 //pino de entrada no sensor
 
+#define ledE = 55
+#define ledD = 54
+
 int branco = 1;
 int preto = 0;
 
@@ -22,14 +25,18 @@ void setup()
   pinMode(echoPin, INPUT);  // define o pino 10 como entrada (recebe)
   pinMode(trigPin, OUTPUT); // define o pino 9 como saida (envia)
   pinMode(inPin, INPUT);    //colocando a porta 2 como entrada
+  pinMode(ledE, OUTPUT); // define o pino 9 como saida (envia)
+  pinMode(ledE, OUTPUT);    //colocando a porta 2 como entrada
 }
 void loop()
 {
   int valor = digitalRead(inPin); //realizando a leitura no sensor optico
-                                  // if (dis() > 7)
-                                  // {
+  // if (dis() > 7)
+  // {
   seguirLinha(valor);
-  // }else{
+  // }
+  // else
+  // {
   //   desviar();
   // }
 }
